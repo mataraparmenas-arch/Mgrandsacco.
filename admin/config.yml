@@ -8,7 +8,7 @@ backend:
     uploadMedia: "Upload \"{{path}}\""
     deleteMedia: "Delete \"{{path}}\""
 
-site_url: "https://mgrandsacco.netlify.app"  # ⬅️ CRITICAL FIX
+site_url: "https://mgrandsacco.netlify.app" 
 
 media_folder: "static/img/uploads"
 public_folder: "/img/uploads"
@@ -69,3 +69,4 @@ collections:
       - { label: "Features", name: "features", widget: "list" }
 
       - { label: "Description", name: "description", widget: "markdown" }
+

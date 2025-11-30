@@ -1,0 +1,16 @@
+{
+  "name": "mgrand-sacco-website",
+  "version": "1.0.0",
+  "description": "Futuristic SACCO website with Netlify CMS",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "build": "echo 'No build process'"
+  },
+  "keywords": ["sacco", "financial", "cms"],
+  "author": "Mgrand Sacco",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

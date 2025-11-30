@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Create {{collection}} \"{{slug}}\""
+    update: "Update {{collection}} \"{{slug}}\""
+    delete: "Delete {{collection}} \"{{slug}}\""
+    uploadMedia: "Upload \"{{path}}\""
+    deleteMedia: "Delete \"{{path}}\""
+
+media_folder: "static/img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "index.html"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "Services", name: "services", widget: "list", fields: [
+              { label: "Service Title", name: "title", widget: "string" },
+              { label: "Service Description", name: "description", widget: "text" },
+              { label: "Icon", name: "icon", widget: "string" }
+            ] 
+          }
+
+  - name: "news"
+    label: "News & Updates"
+    folder: "content/news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featured_image", widget: "image" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Category", name: "category", widget: "select", options: ["Announcement", "Event", "Financial Tip", "Update"] }
+
+  - name: "loan_products"
+    label: "Loan Products"
+    folder: "content/loans"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Interest Rate", name: "interest_rate", widget: "string" }
+      - { label: "Maximum Amount", name: "max_amount", widget: "string" }
+      - { label: "Repayment Period", name: "repayment_period", widget: "string" }
+      - { label: "Requirements", name: "requirements", widget: "list" }
+      - { label: "Description", name: "description", widget: "markdown" }
+
+  - name: "savings_products"
+    label: "Savings Products"
+    folder: "content/savings"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Interest Rate", name: "interest_rate", widget: "string" }
+      - { label: "Minimum Deposit", name: "min_deposit", widget: "string" }
+      - { label: "Features", name: "features", widget: "list" }
+      - { label: "Description", name: "description", widget: "markdown" }
